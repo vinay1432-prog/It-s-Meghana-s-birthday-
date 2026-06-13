@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Meghana ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+
+    <div class="stars"></div>
+
+    <audio id="bgMusic" loop>
+        <source src="music/piano.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Welcome Screen -->
+
+    <section id="welcomeScreen" class="screen active">
+
+        <h1 class="main-title">
+            A Small Journey Awaits ✨
+        </h1>
+
+        <p class="subtitle">
+            Made especially for someone who makes the world brighter.
+        </p>
+
+        <button id="beginBtn">
+            Begin Journey ❤️
+        </button>
+
+    </section>
+
+    <!-- Story Screen -->
+
+    <section id="storyScreen" class="screen">
+
+        <h1 id="storyText"></h1>
+
+    </section>
+
+    <!-- Name Reveal -->
+
+    <section id="nameScreen" class="screen">
+
+        <h1 class="nameReveal">
+            MEGHANA SN ❤️
+        </h1>
+
+        <p class="tapStart">
+            Tap anywhere to begin
+        </p>
+
+    </section>
+
+    <!-- Gallery -->
+
+    <section id="galleryScreen" class="screen">
+
+        <img id="galleryImage" src="" alt="Meghana">
+
+        <h2 id="galleryQuote"></h2>
+
+        <div id="tapHint">
+            ✨ Tap Anywhere ✨
+        </div>
+
+        <div id="revealWord"></div>
+
+    </section>
+
+    <!-- Letter -->
+
+    <section id="letterScreen" class="screen">
+
+        <h1 class="letterTitle">
+            Dear Meghana ❤️
+        </h1>
+
+        <div id="letterText"></div>
+
+    </section>
+
+    <!-- Final -->
+
+    <section id="finalScreen" class="screen">
+
+        <h1 class="birthdayFinal">
+            HAPPY BIRTHDAY
+        </h1>
+
+        <h2 class="birthdayName">
+            MEGHANA SN ❤️
+        </h2>
+
+        <p class="finalMessage">
+            The world is brighter because you're in it ✨
+        </p>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

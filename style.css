@@ -1,0 +1,377 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#050816;
+    color:white;
+    font-family:'Segoe UI',sans-serif;
+    overflow:hidden;
+    height:100vh;
+}
+
+.screen{
+    display:none;
+    position:absolute;
+    width:100%;
+    height:100vh;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:20px;
+}
+
+.active{
+    display:flex;
+}
+
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
+
+    background-size:
+    120px 120px,
+    200px 200px;
+
+    animation:starsMove 60s linear infinite;
+    opacity:.6;
+}
+
+@keyframes starsMove{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-500px);
+    }
+}
+
+.main-title{
+    font-size:3rem;
+    margin-bottom:20px;
+    text-shadow:0 0 20px #ff4d94;
+}
+
+.subtitle{
+    max-width:700px;
+    line-height:1.8;
+    color:#d1d5db;
+    margin-bottom:40px;
+}
+
+#beginBtn{
+    background:#ff4081;
+    color:white;
+    border:none;
+    padding:15px 40px;
+    border-radius:40px;
+    cursor:pointer;
+    font-size:1rem;
+    transition:.3s;
+}
+
+#beginBtn:hover{
+    transform:scale(1.05);
+}
+
+#storyText{
+    font-size:3rem;
+    max-width:900px;
+    animation:fadeIn 1.5s ease;
+}
+
+.nameReveal{
+    font-size:4rem;
+    color:#ff4081;
+    text-shadow:
+    0 0 20px #ff4081,
+    0 0 50px #ff4081;
+}
+
+.tapStart{
+    margin-top:30px;
+    opacity:.8;
+    animation:pulse 2s infinite;
+}
+
+#galleryImage{
+    position:absolute;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:1;
+
+    animation:zoomPhoto 8s linear forwards;
+}
+
+@keyframes zoomPhoto{
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(.50);
+    }
+}
+
+#galleryQuote{
+    position:absolute;
+    top:80px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+#tapHint{
+    position:absolute;
+
+    bottom:50px;
+
+    z-index:5;
+
+    color:white;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    background:rgba(255,64,129,.25);
+
+    backdrop-filter:blur(10px);
+
+    opacity:0;
+
+    transition:.5s;
+}
+
+.showHint{
+    opacity:1 !important;
+}
+
+#revealWord{
+    position:absolute;
+
+    z-index:10;
+
+    font-size:3rem;
+
+    font-weight:bold;
+
+    color:white;
+
+    text-shadow:
+    0 0 10px #ff4081,
+    0 0 30px #ff4081,
+    0 0 60px #ff4081;
+
+    display:none;
+
+    animation:revealPop 1s ease;
+}
+
+.letterTitle{
+    color:#ff4081;
+    margin-bottom:30px;
+}
+
+#letterText{
+    max-width:800px;
+    line-height:2;
+    white-space:pre-line;
+    min-height:250px;
+}
+
+.birthdayFinal{
+    font-size:4rem;
+    color:#ff4081;
+    text-shadow:0 0 30px #ff4081;
+}
+
+.birthdayName{
+    margin-top:20px;
+    font-size:3rem;
+}
+
+.finalMessage{
+    margin-top:30px;
+    font-size:1.3rem;
+}
+
+@keyframes revealPop{
+
+    0%{
+        opacity:0;
+        transform:scale(.5);
+    }
+
+    100%{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes pulse{
+    50%{
+        opacity:1;
+    }
+}
+
+@media(max-width:768px){
+
+    .main-title{
+        font-size:2rem;
+    }
+
+    #storyText{
+        font-size:2rem;
+    }
+
+    .nameReveal{
+        font-size:2.5rem;
+    }
+
+    .birthdayFinal{
+        font-size:2.5rem;
+    }
+
+    .birthdayName{
+        font-size:2rem;
+    }
+}
+
+#galleryScreen::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.15),
+        rgba(0,0,0,.65)
+    );
+
+    z-index:2;
+}
+
+#particles{
+    position:fixed;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:3;
+}
+
+.particle{
+    position:absolute;
+
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+
+    background:white;
+
+    animation:floatParticle 8s linear forwards;
+}
+
+@keyframes floatParticle{
+
+    from{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+    to{
+        opacity:0;
+        transform:translateY(-300px);
+    }
+}
+
+.sparkle{
+
+    position:absolute;
+
+    width:10px;
+    height:10px;
+
+    background:white;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:50;
+
+    animation:sparkle .8s forwards;
+}
+
+@keyframes sparkle{
+
+    from{
+        opacity:1;
+        transform:scale(1);
+    }
+
+    to{
+        opacity:0;
+        transform:scale(5);
+    }
+}
+
+.shooting-star{
+
+    position:absolute;
+
+    width:120px;
+    height:2px;
+
+    background:white;
+
+    box-shadow:0 0 10px white;
+
+    transform:rotate(-35deg);
+
+    animation:shoot 1.5s linear forwards;
+}
+
+@keyframes shoot{
+
+    from{
+        opacity:1;
+        transform:translateX(0) translateY(0) rotate(-35deg);
+    }
+
+    to{
+        opacity:0;
+        transform:translateX(600px) translateY(300px) rotate(-35deg);
+    }
+}
